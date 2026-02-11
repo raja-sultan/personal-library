@@ -1,0 +1,38 @@
+import { SvgIcon } from "@mui/material";
+
+import type { SxProps } from "@mui/material";
+
+interface IconProps {
+  width?: string;
+
+  height?: string;
+
+  sx?: SxProps;
+}
+
+export function LocationIcon(props: IconProps): JSX.Element {
+  const { width = "24px", height = "24px", sx = {} } = props;
+
+  return (
+    <SvgIcon sx={{ width, height, ...sx }}>
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M12.0028 13.4314C13.7259 13.4314 15.1228 12.0345 15.1228 10.3114C15.1228 8.58828 13.7259 7.19141 12.0028 7.19141C10.2797 7.19141 8.88281 8.58828 8.88281 10.3114C8.88281 12.0345 10.2797 13.4314 12.0028 13.4314Z"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        />
+        <path
+          d="M3.61776 8.49C5.58776 -0.169998 18.4178 -0.159997 20.3778 8.5C21.5278 13.58 18.3678 17.88 15.5978 20.54C13.5878 22.48 10.4078 22.48 8.38776 20.54C5.62776 17.88 2.46776 13.57 3.61776 8.49Z"
+          stroke="currentColor"
+          strokeWidth="1.5"
+        />
+      </svg>
+    </SvgIcon>
+  );
+}

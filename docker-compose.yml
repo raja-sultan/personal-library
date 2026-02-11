@@ -1,0 +1,42 @@
+version: '3'
+services:
+  sso-admin:
+    container_name: sso-admin
+    build:
+      context: .
+      dockerfile: Dockerfile.sso-admin
+    restart: always
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./apps/sso-admin/.env
+  performance:
+    container_name: performance
+    build:
+      context: .
+      dockerfile: Dockerfile.performance
+    restart: always
+    ports:
+      - "3001:3001"
+    env_file:
+      - ./apps/performance/.env
+  recruiting:
+    container_name: recruiting
+    build:
+      context: .
+      dockerfile: Dockerfile.recruiting
+    restart: always
+    ports:
+      - "3002:3002"
+    env_file:
+      - ./apps/recruiting/.env
+  on-boarding:
+    container_name: on-boarding
+    build:
+      context: .
+      dockerfile: Dockerfile.onboarding
+    restart: always
+    ports:
+      - "3003:3003"
+    env_file:
+      - ./apps/on-boarding/.env

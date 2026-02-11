@@ -1,0 +1,17 @@
+{
+  "extends": "tsconfig/nextjs.json",
+  "compilerOptions": {
+    "plugins": [{ "name": "next" }],
+    "baseUrl": ".",
+    "paths": {
+      // "@assets/*": ["assets/*"],
+      // "@components/*": ["components/*"],
+      // "@sections/*": ["sections/*"],
+      // "@utils": ["utils/"],
+      // "@types": ["types/"],
+      // "@root/*": ["*"]
+    }
+  },
+  "include": [".", "types/**/*.ts", "utils/highlight.tsx"],
+  "exclude": ["dist", "build", "node_modules"]
+}

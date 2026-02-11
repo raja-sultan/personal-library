@@ -1,0 +1,15 @@
+export { default as startIcon } from "./example.png";
+export { default as coverImage } from "./profile-background-image.jpg";
+export { default as logoIcon } from "./logo.png";
+export { default as deleteBtn } from "./trash.png";
+export { default as cameraIcon } from "./camera-icon.png";
+export { default as profileInfo } from "./profileInfo.png";
+export { default as candidateCV } from "./candidateCV.png";
+export { default as TypingBro } from "./TypingBro.png";
+export { default as RearrangeIcon } from "./menu.png";
+export { default as orcaloLogo } from "./orcalo.png";
+export { default as bgImage } from "./bgImg.png";
+export { default as footerLogo } from "./footer-logo.png";
+export { default as appleStore } from "./apple-store.png";
+export { default as playStore } from "./play-store.png";
+export { default as ukFlag } from "./uk-flag.png";

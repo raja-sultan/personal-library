@@ -1,0 +1,76 @@
+export const styles = {
+  cardWrapper: {
+    padding: "16px 0",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "space-between",
+    minHeight: "409px",
+  },
+  avatarGroup: {
+    writingMode: "vertical-rl",
+    "--AvatarGroup-gap": "-8px",
+  },
+  avatar: { position: "relative", mt: -1, zIndex: 10 },
+  privacyTextWrapper: {
+    borderRadius: "6px",
+    backgroundColor: "neutral.100",
+    px: 1.2,
+    py: 0.2,
+  },
+  cardDescWrapper: {
+    height: "148px",
+    overflowY: "auto",
+    "&::-webkit-scrollbar": {
+      width: "5px",
+    },
+    "&::-webkit-scrollbar-thumb": {
+      backgroundColor: "#cacaca",
+      borderRadius: "10px",
+    },
+  },
+  reactionContainer: {
+    display: "flex",
+    gap: 1,
+    alignItems: "center",
+    mt: 2.4,
+    padding: "0 15px",
+    pt: 1.5,
+    borderTopWidth: "1px",
+    borderTopStyle: "solid",
+    borderTopColor: "neutral.100",
+  },
+  reactionEmojiWrapper: (viewOnly: boolean) => ({
+    display: "flex",
+    gap: 0.4,
+    alignItems: "center",
+    borderRadius: "6px",
+    backgroundColor: "neutral.100",
+    px: 0.4,
+    py: 0.3,
+    cursor: "pointer",
+    opacity: viewOnly ? "0.5" : "1",
+  }),
+  emojiListWrapper: {
+    px: 1,
+    pt: 1,
+    pb: 0.2,
+    position: "absolute",
+    bottom: 30,
+    left: 0,
+    borderRadius: "6px",
+  },
+  reactionEmoji: {
+    cursor: "pointer",
+  },
+  deleteBtn: {
+    borderColor: "#B54708",
+    color: "#B42318",
+    letterSpacing: "1px",
+    "&:hover": {
+      color: "#fff",
+      borderColor: "#B54708",
+      backgroundColor: "#B54708",
+    },
+  },
+  requestedBtn: {},
+};

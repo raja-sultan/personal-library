@@ -1,0 +1,21 @@
+export const data = [
+  { id: "1", name: "Application Review", label: "Application Review" },
+  { id: "2", name: "Background Check", label: "Background Check" },
+  { id: "3", name: "Document Submission", label: "Document Submission" },
+  { id: "4", name: "Executive Review", label: "Executive Review" },
+  { id: "5", name: "Face To Face", label: "Face to Face" },
+  { id: "6", name: "Face To Face 2", label: "Face to Face 2" },
+  { id: "7", name: "Hiring Manager Review", label: "Hiring Manager Review" },
+  { id: "8", name: "Offer", label: "Offer" },
+  { id: "9", name: "Offer Short List", label: "Offer Short List " },
+  { id: "10", name: "Phone Interview", label: "Phone Interview" },
+  { id: "11", name: "Phone Interview 2", label: "Phone Interview 2" },
+  {
+    id: "12",
+    name: "Preliminary Phone Screen",
+    label: "Preliminary Phone Screen",
+  },
+  { id: "13", name: "Reference Check", label: "Reference Check" },
+  { id: "14", name: "Take Home Test", label: "Take Home Test" },
+  { id: "15", name: "Trial Project", label: "Trial Project" },
+];

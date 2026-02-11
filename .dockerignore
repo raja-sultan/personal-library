@@ -1,0 +1,9 @@
+./build
+./.next
+./apps/sso-admin/.next
+./apps/recruiting/.next
+./apps/performance/.next
+./apps/sso-admin/.turbo
+./apps/recruiting/.turbo
+./apps/performance/.turbo
+./.turbo

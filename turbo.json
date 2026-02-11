@@ -1,0 +1,20 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env.*local", "**/.env"],
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [".next/**", "!.next/cache/**"],
+      "env": ["NEXT_PUBLIC_ENABLE_REDUX_DEV_TOOLS", "NEXT_PUBLIC_BASE_URL", "NEXT_PUBLIC_AWS_BASE_URL","NEXT_PUBLIC_SSO_ADMIN_URL","NEXT_PUBLIC_PERFORMANCE_URL","NEXT_PUBLIC_ON_BOARDING_URL","NEXT_PUBLIC_RECRUITING_URL"]
+    },
+    "lint": {},
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "start": {
+      "cache": true
+    }
+  },
+  "globalDotEnv": [".env", ".env.local"]
+}

@@ -1,0 +1,42 @@
+export const tableData = [
+  {
+    _id: "1",
+    name: "Ronald Richards",
+    title: "Business Analyst",
+    department: "Business Analysis",
+    manager: "Ronald Richard",
+    startDate: "1 Jan 2022",
+  },
+  {
+    _id: "2",
+    name: "Andrew Howard",
+    title: "HR Coordinator",
+    department: "Human Resource",
+    manager: "Andrew Howard",
+    startDate: "23 Feb 2022",
+  },
+  {
+    _id: "3",
+    name: "Riya Martin",
+    title: "Developer",
+    department: "Development",
+    manager: "Riya Martin",
+    startDate: "3 Mar 2022",
+  },
+  {
+    _id: "4",
+    name: "Tim Horton",
+    title: "Business Analyst",
+    department: "Business Analysis",
+    manager: "Tim Horton",
+    startDate: "1 Jan 2022",
+  },
+  {
+    _id: "5",
+    name: "Ronald Richards",
+    title: "Business Analyst",
+    department: "Business Analysis",
+    manager: "Ronald Richard",
+    startDate: "1 Jan 2022",
+  },
+];

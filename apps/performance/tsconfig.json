@@ -1,0 +1,33 @@
+{
+  "extends": "tsconfig/nextjs.json",
+  "compilerOptions": {
+    "plugins": [{ "name": "next" }],
+    "baseUrl": "./",
+    "paths": {
+      "@components/*": ["components/*"],
+      "@sections/*": ["sections/*"],
+      "@contexts/*": ["contexts/*"],
+      "@enums/*": ["enums/*"],
+      "@guards/*": ["guards/*"],
+      "@hoc/*": ["hoc/*"],
+      "@hooks/*": ["hooks/*"],
+      "@layouts/*": ["layouts/*"],
+      "@assets/*": ["assets/*"],
+      "@services/*": ["services/*"],
+
+      "@store": ["store/"],
+      "@slices": ["slices/"],
+      "@utils": ["utils/"],
+
+      "@root/*": ["*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "types/**/*.ts"
+, "app/(app)/settings/departments/edit-departments/page.tsx"  ],
+  "exclude": ["node_modules"]
+}

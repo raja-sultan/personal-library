@@ -1,0 +1,29 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "start": "next start",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "eslint": "^8.48.0",
+    "prettier": "^3.0.3",
+    "tsconfig": "*",
+    "turbo": "^1.12.5"
+  },
+  "name": "personal-library",
+  "packageManager": "npm@9.2.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "dependencies": {
+    "copy-to-clipboard": "^3.3.3",
+    "papaparse": "^5.4.1",
+    "pdfjs-dist": "^4.0.269",
+    "react-pdf": "^7.6.0",
+    "react-signature-canvas": "^1.0.6"
+  }
+}

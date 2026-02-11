@@ -1,0 +1,42 @@
+export const styles = {
+  textField: {
+    overFlow: "hidden",
+  },
+  textFieldBtnWrapper: {
+    position: "absolute",
+    right: 0,
+    backgroundColor: "primary.main",
+    borderTopRightRadius: 1,
+    borderBottomRightRadius: 1,
+    px: 1.5,
+    py: 1,
+    display: "flex",
+    alignItems: "center",
+    flexDirection: "column",
+    justifyContent: "center",
+    gap: 1,
+    height: "100%",
+    borderRadius: 1,
+    borderTopLeftRadius: "unset",
+    borderBottomLeftRadius: "unset",
+  },
+  arrowUpBtn: {
+    cursor: "pointer",
+    fontSize: "unset",
+  },
+  arrowDownBtn: {
+    cursor: "pointer",
+    transform: "rotate(180deg)",
+    fontSize: "unset",
+  },
+  dayWrapper: {
+    width: 32,
+    height: 32,
+    borderRadius: "50%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    cursor: "pointer",
+    backgroundColor: "#F4F3FF",
+  },
+};

@@ -1,0 +1,135 @@
+"use client";
+
+//types
+import type { ReactNode } from "react";
+import type { Theme } from "@mui/material/styles";
+
+// next
+import Head from "next/head";
+
+// @mui
+import { ThemeProvider } from "@mui/material/styles";
+import { AdapterDateFns } from "@mui/x-date-pickers/AdapterDateFns";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import CssBaseline from "@mui/material/CssBaseline";
+
+// redux
+import { PersistGate } from "redux-persist/integration/react";
+import { persistStore } from "redux-persist";
+import { Provider as ReduxProvider } from "react-redux";
+import { store } from "@store";
+
+//contexts
+import { AuthInitializer } from "@hoc/with-auth-initializer";
+import { SettingsConsumer, SettingsProvider } from "common/context";
+
+//other
+import { NextAppDirEmotionCacheProvider } from "tss-react/next/appDir";
+import Cookies from "js-cookie";
+
+// components
+import { createTheme, Toaster } from "common";
+import { SettingsButton } from "@components/settings/settings-button";
+import { SettingsDrawer } from "@components/settings/settings-drawer";
+import type { Settings } from "common/types";
+
+const SETTINGS_STORAGE_KEY = "app.settings";
+
+const resetSettings = (): void => {
+  try {
+    Cookies.remove(SETTINGS_STORAGE_KEY);
+    // window.location.reload();
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+const updateSettings = (settings: Settings): void => {
+  try {
+    Cookies.set(SETTINGS_STORAGE_KEY, JSON.stringify(settings));
+    // window.location.reload();
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+interface LayoutProps {
+  children: ReactNode;
+  settings?: Settings;
+}
+
+const persistor = persistStore(store);
+
+export function Layout(props: LayoutProps): JSX.Element {
+  const { children, settings } = props;
+
+  return (
+    <NextAppDirEmotionCacheProvider options={{ key: "css" }}>
+      <ReduxProvider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <LocalizationProvider dateAdapter={AdapterDateFns}>
+            <SettingsProvider
+              onReset={resetSettings}
+              onUpdate={updateSettings}
+              settings={settings}
+            >
+              <SettingsConsumer>
+                {(themeSettings) => {
+                  const theme: Theme = createTheme({
+                    direction: themeSettings.direction,
+                    responsiveFontSizes: themeSettings.responsiveFontSizes,
+                    colorPreset: themeSettings.colorPreset,
+                    contrast: themeSettings.contrast,
+                    paletteMode: themeSettings.paletteMode,
+                    disableButtonsOnLoginAs:
+                      themeSettings.disableButtonsOnLoginAs,
+                  });
+                  return (
+                    <ThemeProvider theme={theme}>
+                      <Head>
+                        <meta
+                          name="color-scheme"
+                          content={themeSettings.paletteMode}
+                        />
+                        <meta
+                          name="theme-color"
+                          content={theme.palette.neutral[900]}
+                        />
+                      </Head>
+                      <CssBaseline />
+                      <AuthInitializer handleTheme={themeSettings.handleUpdate}>
+                      {children}
+                      <SettingsButton
+                        onClick={themeSettings.handleDrawerOpen}
+                      />
+                      <SettingsDrawer
+                        canReset={themeSettings.isCustom}
+                        onClose={themeSettings.handleDrawerClose}
+                        onReset={themeSettings.handleReset}
+                        onUpdate={themeSettings.handleUpdate}
+                        open={themeSettings.openDrawer}
+                        values={{
+                          direction: themeSettings.direction,
+                          responsiveFontSizes:
+                            themeSettings.responsiveFontSizes,
+                          stretch: themeSettings.stretch,
+                          layout: themeSettings.layout,
+                          colorPreset: themeSettings.colorPreset,
+                          contrast: themeSettings.contrast,
+                          paletteMode: themeSettings.paletteMode,
+                          navColor: themeSettings.navColor,
+                        }}
+                      />
+                      </AuthInitializer>
+                      <Toaster />
+                    </ThemeProvider>
+                  );
+                }}
+              </SettingsConsumer>
+            </SettingsProvider>
+          </LocalizationProvider>
+        </PersistGate>
+      </ReduxProvider>
+    </NextAppDirEmotionCacheProvider>
+  );
+}

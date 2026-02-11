@@ -1,0 +1,39 @@
+{
+  "name": "common",
+  "version": "0.0.0",
+  "main": "./index.tsx",
+  "types": "./index.tsx",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint .",
+    "generate:component": "turbo gen react-component"
+  },
+  "devDependencies": {
+    "@turbo/gen": "^1.10.12",
+    "@types/node": "^20.5.2",
+    "@types/numeral": "^2.0.5",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "eslint-config-custom": "*",
+    "react": "^18.2.0",
+    "tsconfig": "*",
+    "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.11",
+    "@tanstack/react-table": "^8.10.7",
+    "highlight.js": "^11.9.0",
+    "mui-tel-input": "^4.0.1",
+    "numeral": "^2.0.6",
+    "react-dropzone": "^14.2.3",
+    "react-hook-form": "^7.47.0",
+    "react-international-phone": "2.0.4",
+    "react-lazy-load-image-component": "^1.6.0",
+    "react-material-ui-carousel": "^3.4.2",
+    "react-phone-number-input": "^3.3.7",
+    "react-quill": "^2.0.0",
+    "react-signature-canvas": "^1.0.6"
+  }
+}
