@@ -1,0 +1,11 @@
+[build]
+  base = "."
+  command = "turbo run build"
+  publish = "apps/recruiting/.next"  # adjust based on your framework
+
+[build.environment]
+  TURBO_TOKEN = "your_turbo_token"  # if using remote caching
+  TURBO_TEAM = "your_team"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"  # if using Next.js
