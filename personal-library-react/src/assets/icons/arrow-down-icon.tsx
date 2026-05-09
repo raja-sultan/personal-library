@@ -1,0 +1,29 @@
+import { SvgIcon } from "@mui/material";
+import type { SxProps } from "@mui/material";
+
+interface IconProps {
+  width?: string;
+  height?: string;
+  sx?: SxProps;
+}
+
+export function ArrowDownIcon(props: IconProps): JSX.Element {
+  const { width = "2.4rem", height = "2.4rem", sx = {} } = props;
+
+  return (
+    <SvgIcon sx={{ width, height, ...sx }}>
+      <svg
+        width="10"
+        height="6"
+        viewBox="0 0 10 6"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8.94845 0.453125H4.79512H1.05512C0.415119 0.453125 0.0951188 1.22646 0.548452 1.67979L4.00179 5.13312C4.55512 5.68646 5.45512 5.68646 6.00845 5.13312L7.32178 3.81979L9.46179 1.67979C9.90845 1.22646 9.58845 0.453125 8.94845 0.453125Z"
+          fill="currentColor"
+        />
+      </svg>
+    </SvgIcon>
+  );
+}
